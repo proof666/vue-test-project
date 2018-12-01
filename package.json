@@ -1,0 +1,11 @@
+{
+  "name": "vue-test-project",
+  "version": "1.0.0",
+  "description": "Test case vue application",
+  "author": "Sergey Pushkin",
+  "private": true,
+  "scripts": {
+    "start-client": "yarn --cwd ./client/ run dev",
+    "start-server": "yarn --cwd ./server/ run start"
+  }
+}
