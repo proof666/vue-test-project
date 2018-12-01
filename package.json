@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start-client": "yarn --cwd ./client/ run dev",
-    "start-server": "yarn --cwd ./server/ run start"
+    "start-server": "yarn --cwd ./server/ run start",
+    "start-redis": "redis-server /usr/local/etc/redis.conf"
   }
 }
