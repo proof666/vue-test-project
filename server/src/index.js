@@ -18,6 +18,10 @@ app.get('/logs', (req, res) => {
   redis.getData('log').then(log => res.send(log));
 });
 
+app.get('/data', (req, res) => {
+  redis.getData('data').then(data => res.send(data));
+});
+
 app.post('/addData', (req, res) => {
   let response = 'success';
   res.status(201);
