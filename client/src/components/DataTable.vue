@@ -35,12 +35,14 @@ table {
   border-collapse: collapse;
 }
 thead th {
-    background-color: #00695C;
-    color: white;
+  background-color: #00695C;
+  color: white;
+  font-weight: bold;
 }
 th, td{
   padding: 4px;
   text-align: left;
+  font-weight: normal;
 }
 table, th, td {
   border: 1px solid gray;
