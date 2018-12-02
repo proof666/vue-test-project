@@ -1,7 +1,7 @@
 <template>
   <div>
     <H1>Add Data</H1>
-    <div id="form-container">
+    <div class="container">
       <div class="form">
         <input type="text" name="title" placeholder="Name..."
           v-model="name" v-bind:disabled="inProgress">
@@ -82,10 +82,6 @@ export default {
 </script>
 
 <style scoped>
-#form-container {
-  width: 100%;
-  overflow-x: auto;
-}
 .form {
   display: block;
   width: 70%;

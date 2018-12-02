@@ -1,7 +1,7 @@
 <template>
 <div>
 <H1>Logs</H1>
-  <div id='table-container'>
+  <div class='container'>
     <data-table v-bind:headers="headers" v-bind:data="log.data"></data-table>
   </div>
 </div>
@@ -36,9 +36,4 @@ export default {
 </script>
 
 <style scoped>
-#table-container {
-  width: 100%;
-  overflow-x:auto;
-  padding-bottom: 100px;
-}
 </style>

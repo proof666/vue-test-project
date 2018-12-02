@@ -29,9 +29,12 @@ export default {
 </script>
 
 <style scoped>
-table {
+.table-container {
   width: 70%;
   margin: 0 auto;
+}
+table {
+  width: 100%;
   border-collapse: collapse;
 }
 thead th {
