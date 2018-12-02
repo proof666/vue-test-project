@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+const bodyParser = require('body-parser');
 const redis = require('./redis');
 const config = require('./config/config');
 
@@ -11,8 +11,35 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
+
+app.use(bodyParser.json());
+
 app.get('/logs', (req, res) => {
   redis.getEventLog().then(log => res.send(log));
+});
+
+app.post('/addData', (req, res) => {
+  let response = 'success';
+  res.status(201);
+  if (!Object.prototype.hasOwnProperty.call(req.body, 'name')) {
+    response = 'Error: payload does not have field "name".';
+    res.status(400);
+  } else if (!Object.prototype.hasOwnProperty.call(req.body, 'text')) {
+    response = 'Error: payload does not have field "text".';
+    res.status(400);
+  } else {
+    const event = {
+      type: 'addData',
+      datetime: new Date().toISOString(),
+      eventData: {
+        name: req.body.name,
+        text: req.body.text,
+      },
+    };
+    redis.addEventToList('data', event);
+    redis.addEventToList('log', event);
+  }
+  res.json({ message: response });
 });
 
 const server = app.listen(process.env.PORT || config.port,
