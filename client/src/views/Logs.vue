@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import DataTable from './DataTable';
+import DataTable from '../components/datatable/DataTable';
 
 export default {
   name: 'Logs',

@@ -1,4 +1,6 @@
 <template>
+  <div class="table-container">
+    <data-table-info v-bind:length="data ? data.length : 0" v-bind:lastUpdate="lastUpdate"/>
   <table>
     <thead>
       <tr>
@@ -16,14 +18,32 @@
       </tr>
     </tbody>
   </table>
+    <data-table-info v-bind:length="data ? data.length : 0" v-bind:lastUpdate="lastUpdate"/>
+  </div>
 </template>
 
 <script>
+import DataTableInfo from './DataTableInfo';
+
 export default {
   name: 'Data-Table',
   props: {
     headers: Array,
     data: Array,
+  },
+  components: {
+    DataTableInfo,
+  },
+  data() {
+    return {
+      lastUpdate: '',
+    };
+  },
+  mounted() {
+    this.lastUpdate = new Date().toISOString();
+  },
+  updated() {
+    this.lastUpdate = new Date().toISOString();
   },
 };
 </script>

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Logs from '@/components/Logs';
-import Data from '@/components/Data';
-import AddData from '@/components/AddData';
+import Logs from '@/views/Logs';
+import Data from '@/views/Data';
+import AddData from '@/views/AddData';
 
 Vue.use(Router);
 
