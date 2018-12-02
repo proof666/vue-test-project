@@ -30,5 +30,5 @@ io.on('connection', (socket) => {
   };
   console.debug(event);
 
-  redis.addEventToLog(event);
+  redis.addEventToList('Log', event);
 });
