@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.get('/logs', (req, res) => {
-  redis.getEventLog().then(log => res.send(log));
+  redis.getData('log').then(log => res.send(log));
 });
 
 app.post('/addData', (req, res) => {

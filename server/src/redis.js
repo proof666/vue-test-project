@@ -9,8 +9,8 @@ module.exports = {
       console.debug(message);
     });
   },
-  getEventLog: () => new Promise((resolve) => {
-    client.lrange('log', 0, -1, (err, reply) => {
+  getData: list => new Promise((resolve) => {
+    client.lrange(list, 0, -1, (err, reply) => {
       const success = !err;
       const message = err || 'success';
       const data = err ? [] : `[${reply}]`;
