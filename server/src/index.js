@@ -12,8 +12,10 @@ const io = require('socket.io')(server);
 io.on('connection', (socket) => {
   const event = {
     type: 'login',
-    session: socket.id,
     datetime: new Date().toISOString(),
+    eventData: {
+    session: socket.id,
+    },
   };
   console.debug(event);
 
