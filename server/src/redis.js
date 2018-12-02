@@ -6,6 +6,7 @@ module.exports = {
   addEventToList: (list, event) => {
     client.rpush(list, JSON.stringify(event), (err, reply) => {
       const message = err ? `Error: ${err}` : `Redis ${list} list contain ${reply} record(s).`;
+      console.debug(`New event added to list ${list}`, event);
       console.debug(message);
     });
   },
