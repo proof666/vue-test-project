@@ -32,6 +32,7 @@ body {
 }
 #content {
   padding: 10px 10px;
-  flex: 5
+  flex: 5;
+  overflow: scroll;
 }
 </style>
