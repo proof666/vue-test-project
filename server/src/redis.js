@@ -9,4 +9,16 @@ module.exports = {
       console.debug(message);
     });
   },
+  getEventLog: () => new Promise((resolve) => {
+    client.lrange('log', 0, -1, (err, reply) => {
+      const success = !err;
+      const message = err || 'success';
+      const data = err ? [] : `[${reply}]`;
+      resolve({
+        success,
+        message,
+        data: JSON.parse(data),
+      });
+    });
+  }),
 };
