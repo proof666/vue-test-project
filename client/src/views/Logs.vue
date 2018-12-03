@@ -31,6 +31,12 @@ export default {
   },
   created() {
     fetch('http://localhost:8081/logs').then(response => response.json()).then((log) => { this.log = log; });
+    this.$io.on('login', (data) => {
+      this.log.data.push(data);
+    });
+    this.$io.on('logout', (data) => {
+      this.log.data.push(data);
+    });
   },
 };
 </script>
