@@ -4,11 +4,11 @@ module.exports = (app, redis) => {
   app.use(bodyParser.json());
 
   app.get('/logs', (req, res) => {
-    redis.getData('log').then(log => res.send(log));
+    redis.getData('log').then(log => res.json(log));
   });
 
   app.get('/data', (req, res) => {
-    redis.getData('data').then(data => res.send(data));
+    redis.getData('data').then(data => res.json(data));
   });
 
   app.post('/auth', (req, res) => {
