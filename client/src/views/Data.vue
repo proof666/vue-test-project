@@ -30,7 +30,7 @@ export default {
     };
   },
   created() {
-    fetch('http://localhost:8081/data').then(response => response.json()).then((data) => { this.dataStore = data; });
+    fetch(`${process.env.BACKEND_HOST}/data`).then(response => response.json()).then((data) => { this.dataStore = data; });
     this.$io.on('addData', (data) => {
       this.dataStore.data.push(data);
     });

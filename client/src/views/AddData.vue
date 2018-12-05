@@ -39,7 +39,7 @@ export default {
     async submit() {
       if (this.validation) {
         this.inProgress = true;
-        fetch('http://localhost:8081/addData', {
+        fetch(`${process.env.BACKEND_HOST}/addData`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
