@@ -1,7 +1,7 @@
 <template>
   <div class="table-container">
     <data-table-info v-bind:length="data ? data.length : 0" v-bind:lastUpdate="lastUpdate"/>
-  <table>
+    <table v-show="data && data.length > 0">
     <thead>
       <tr>
         <th v-for="(header, index) in headers" :key="index">{{header}}</th>
