@@ -18,7 +18,6 @@
       </tr>
     </tbody>
   </table>
-    <data-table-info v-bind:length="data ? data.length : 0" v-bind:lastUpdate="lastUpdate"/>
   </div>
 </template>
 
