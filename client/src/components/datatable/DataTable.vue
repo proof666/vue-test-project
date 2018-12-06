@@ -1,7 +1,7 @@
 <template>
   <div class="table-container">
-    <data-table-info v-bind:length="data ? data.length : 0" v-bind:lastUpdate="lastUpdate"/>
-    <table v-show="data && data.length > 0">
+    <data-table-info v-bind:loading="loading" v-bind:length="data ? data.length : 0" v-bind:lastUpdate="lastUpdate"/>
+    <table v-show="!loading && data && data.length > 0">
     <thead>
       <tr>
         <th v-for="(header, index) in headers" :key="index">{{header}}</th>
@@ -29,6 +29,7 @@ export default {
   props: {
     headers: Array,
     data: Array,
+    loading: Boolean,
   },
   components: {
     DataTableInfo,
