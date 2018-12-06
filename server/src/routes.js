@@ -11,31 +11,6 @@ module.exports = (app, redis) => {
     redis.getData('data').then(data => res.json(data));
   });
 
-  app.post('/auth', (req, res) => {
-    let response = 'success';
-    res.status(201);
-    if (!Object.prototype.hasOwnProperty.call(req.body, 'session')) {
-      response = 'Error: payload does not have field "session".';
-      res.status(400);
-    } else if (!Object.prototype.hasOwnProperty.call(req.body, 'type')) {
-      response = 'Error: payload does not have field "type".';
-      res.status(400);
-    } else if (!((req.body.type === 'login') || (req.body.type === 'logout'))) {
-      response = 'Error: field "type" contains invalid value.';
-      res.status(400);
-    } else {
-      const event = {
-        type: req.body.type,
-        datetime: new Date().toISOString(),
-        eventData: {
-          session: req.body.session,
-        },
-      };
-      redis.addEventToList('log', event);
-    }
-    res.json({ message: response });
-  });
-
   app.post('/addData', (req, res) => {
     let response = 'success';
     res.status(201);
