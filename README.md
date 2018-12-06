@@ -68,4 +68,4 @@ Use `npm run test-server` to run server api unit tests with [Jest](https://jestj
 Use `npm run e2e` to run ent-to-end test with [Jest](https://jestjs.io/) and [Nightwatch.js](http://nightwatchjs.org/) that run against a Selenium/WebDriver server.
 
 ### License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/proof666/vue-test-project/blob/master/LICENSE.md) file for details
