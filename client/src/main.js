@@ -6,7 +6,7 @@ import App from './App';
 import router from './router';
 
 Vue.config.productionTip = false;
-Vue.prototype.$io = io('localhost:8081', {
+Vue.prototype.$io = io(process.env.BACKEND_HOST, {
   'sync disconnect on unload': true,
 });
 
