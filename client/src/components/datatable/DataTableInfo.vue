@@ -1,7 +1,10 @@
 <template>
-  <span v-show="length && lastUpdate">
-      {{`${length} line(s) shown. Data retrieved: ${lastUpdate}.`}}
-    </span>
+  <div>
+    <span
+      v-show="length && length > 0 && lastUpdate"
+    >{{`${length} line(s) shown. Data retrieved: ${lastUpdate}.`}}</span>
+    <span v-show="!length">{{`There is no data to display :(.`}}</span>
+  </div>
 </template>
 
 <script>
