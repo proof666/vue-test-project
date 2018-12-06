@@ -31,8 +31,9 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 #content {
-  padding: 10px 10px;
+  padding: 10px 10px 100px;
   flex: 5;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 </style>
