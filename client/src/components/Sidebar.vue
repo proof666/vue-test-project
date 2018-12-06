@@ -18,7 +18,7 @@ export default {
 .sidebar {
   flex: 1;
   background-color: #00695C;
-  overflow-x: hidden;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
 }
 .sidebar ul {
   padding: 0;
@@ -31,6 +31,7 @@ export default {
   font-size: 22px;
   display: block;
   color: whitesmoke;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .sidebar li.router-link-exact-active {
   background-color: #009688;
