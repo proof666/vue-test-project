@@ -1,6 +1,11 @@
 const redis = require('redis');
 
-const client = redis.createClient();
+const client = process.env.NODE_ENV === 'production'
+  ? redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST, {
+    auth_pass: process.env.REDIS_SECRET,
+    tls: { servername: process.env.REDIS_HOST },
+  })
+  : redis.createClient();
 
 module.exports = io => ({
   addEventToList: (list, event, clientEmit) => {
