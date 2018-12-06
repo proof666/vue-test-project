@@ -11,6 +11,6 @@
     "test-client": "yarn --cwd ./client/ run unit",
     "test-server": "yarn --cwd ./server/ run test",
     "e2e": "yarn --cwd ./client/ run e2e",
-    "install": "cd client && npm i && cd ../server && npm i && cd.."
+    "install": "cd client && npm i && cd ../server && npm i && cd .."
   }
 }
